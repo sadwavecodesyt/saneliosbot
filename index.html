@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation and Bot Authorization</title>
+    <title>Sanelios Bot Documentation</title>
     <style>
         /* CSS Styles */
         body {
@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: #f3f3f3;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
         }
 
         header {
@@ -42,13 +43,15 @@
 
         main {
             padding: 20px;
+            overflow-y: auto; /* Enable vertical scrollbar if needed */
+            height: calc(100vh - 200px); /* Adjust main height to leave space for header and footer */
         }
 
         section {
             margin-bottom: 40px;
         }
 
-        h1, h2 {
+        h1, h2, h3 {
             color: #333;
         }
 
@@ -60,7 +63,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100%;
         }
 
         .button {
@@ -99,11 +102,29 @@
             opacity: 1;
             transform: translateX(0);
         }
+
+        /* Additional Styles */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffd700;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #ffc107;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to the Documentation and Bot Authorization Website</h1>
+        <h1>Sanelios Bot Documentation</h1>
         <nav>
             <ul>
                 <li><a href="#documentation">Documentation</a></li>
@@ -112,9 +133,9 @@
     </header>
 
     <main>
-        <section id="documentation" class="slide-in-left">
+        <section id="documentation" class="fade-in">
             <h2>Documentation</h2>
-            <p class="bot-description fade-in">Sanelios Bot is a versatile Discord bot with features like a working stock market, role shop, moderation commands, and basic economy.</p>
+            <p class="bot-description">Sanelios Bot is a versatile Discord bot with features like a working stock market, role shop, moderation commands, and basic economy.</p>
             <h3>Example Command</h3>
             <div class="command">
                 <p><strong>Command:</strong> !stock</p>
@@ -123,22 +144,46 @@
                 <p><strong>Example:</strong> !stock AAPL</p>
             </div>
         </section>
+
+        <!-- JavaScript Elements -->
+        <section class="fade-in">
+            <h2>JavaScript Elements</h2>
+            <div class="javascript-elements">
+                <button onclick="alert('Hello!')" class="button">Click Me</button>
+                <div id="counter">0</div>
+                <button onclick="incrementCounter()" class="button">Increment Counter</button>
+                <button onclick="changeColor()" class="button">Change Color</button>
+                <button onclick="toggleVisibility()" class="button">Toggle Visibility</button>
+                <input type="text" id="inputText" placeholder="Type something...">
+                <button onclick="showInputText()" class="button">Show Input Text</button>
+                <div id="output"></div>
+                <button onclick="scrollToTop()" class="button">Scroll to Top</button>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Documentation and Bot Authorization Website. All rights reserved.</p>
+        <p>&copy; 2024 Sanelios Bot Documentation. All rights reserved.</p>
     </footer>
 
-    <div class="container">
-        <a href="https://discord.com/oauth2/authorize?client_id=1190686283295633530&scope=bot%20applications.commands&permissions=2146958847" class="button fade-in">Authorize Sanelios Bot</a>
-    </div>
+    <div class="scroll-to-top" onclick="scrollToTop()">↑</div>
 
     <script>
         // JavaScript code for slide-in effect
         document.addEventListener("DOMContentLoaded", function() {
-            var documentationSection = document.getElementById("documentation");
-            documentationSection.classList.add("active");
+            var sections = document.querySelectorAll(".fade-in");
+            sections.forEach(function(section) {
+                section.classList.add("active");
+            });
         });
-    </script>
-</body>
-</html>
+
+        // Increment counter function
+        var counter = 0;
+        function incrementCounter() {
+            counter++;
+            document.getElementById("counter").innerText = counter;
+        }
+
+        // Change color function
+        function changeColor() {
+            var randomColor = '#' + Math.floor(Math
