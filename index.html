@@ -5,25 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanelios Bot Documentation</title>
     <style>
-        /* CSS Styles */
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f3f3f3;
-            overflow-x: hidden; /* Hide horizontal scrollbar */
+            line-height: 1.6;
         }
 
         header {
-            background-color: #ffd700;
-            color: #333;
+            background-color: #7289da;
+            color: #fff;
             padding: 20px;
             text-align: center;
         }
 
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        footer {
+            background-color: #7289da;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Navigation Styles */
         nav ul {
             list-style-type: none;
             padding: 0;
+            text-align: center;
         }
 
         nav ul li {
@@ -32,158 +53,112 @@
         }
 
         nav ul li a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
+            position: relative;
         }
 
-        nav ul li a:hover {
-            color: #000;
+        nav ul li a:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out 0s;
         }
 
-        main {
-            padding: 20px;
-            overflow-y: auto; /* Enable vertical scrollbar if needed */
-            height: calc(100vh - 200px); /* Adjust main height to leave space for header and footer */
+        nav ul li a:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
         }
 
-        section {
-            margin-bottom: 40px;
-        }
-
-        h1, h2, h3 {
-            color: #333;
+        /* Section Styles */
+        h1, h2 {
+            color: #7289da;
         }
 
         p {
-            color: #666;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        .button {
-            padding: 10px 20px;
-            background-color: #ffd700;
             color: #333;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
-        .button:hover {
-            background-color: #ffc107;
-        }
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            header {
+                padding: 10px;
+            }
 
-        /* JavaScript Effects */
-        .fade-in {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .fade-in.active {
-            opacity: 1;
-        }
-
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .slide-in-left.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Additional Styles */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ffd700;
-            color: #333;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .scroll-to-top:hover {
-            background-color: #ffc107;
+            main {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Sanelios Bot Documentation</h1>
+        <!-- Navigation Menu -->
         <nav>
             <ul>
-                <li><a href="#documentation">Documentation</a></li>
+                <li><a href="#command1">Command 1</a></li>
+                <li><a href="#command2">Command 2</a></li>
+                <!-- Add more links for other commands -->
             </ul>
         </nav>
     </header>
-
+    
     <main>
-        <section id="documentation" class="fade-in">
-            <h2>Documentation</h2>
-            <p class="bot-description">Sanelios Bot is a versatile Discord bot with features like a working stock market, role shop, moderation commands, and basic economy.</p>
-            <h3>Example Command</h3>
-            <div class="command">
-                <p><strong>Command:</strong> !stock</p>
-                <p><strong>Description:</strong> Retrieves information about a specific stock.</p>
-                <p><strong>Usage:</strong> !stock [symbol]</p>
-                <p><strong>Example:</strong> !stock AAPL</p>
-            </div>
+        <section id="command1">
+            <h2>Command 1</h2>
+            <p>Description of Command 1.</p>
+            <h3>Usage:</h3>
+            <pre><code>!command1 [arguments]</code></pre>
+            <h3>Example:</h3>
+            <pre><code>!command1 argument1 argument2</code></pre>
         </section>
-
-        <!-- JavaScript Elements -->
-        <section class="fade-in">
-            <h2>JavaScript Elements</h2>
-            <div class="javascript-elements">
-                <button onclick="alert('Hello!')" class="button">Click Me</button>
-                <div id="counter">0</div>
-                <button onclick="incrementCounter()" class="button">Increment Counter</button>
-                <button onclick="changeColor()" class="button">Change Color</button>
-                <button onclick="toggleVisibility()" class="button">Toggle Visibility</button>
-                <input type="text" id="inputText" placeholder="Type something...">
-                <button onclick="showInputText()" class="button">Show Input Text</button>
-                <div id="output"></div>
-                <button onclick="scrollToTop()" class="button">Scroll to Top</button>
-            </div>
+        
+        <section id="command2">
+            <h2>Command 2</h2>
+            <p>Description of Command 2.</p>
+            <h3>Usage:</h3>
+            <pre><code>!command2 [arguments]</code></pre>
+            <h3>Example:</h3>
+            <pre><code>!command2 argument1 argument2</code></pre>
         </section>
+        
+        <!-- Add more sections for other commands -->
     </main>
-
+    
     <footer>
-        <p>&copy; 2024 Sanelios Bot Documentation. All rights reserved.</p>
+        <p>&copy; 2024 Sanelios. All rights reserved.</p>
     </footer>
 
-    <div class="scroll-to-top" onclick="scrollToTop()">↑</div>
-
     <script>
-        // JavaScript code for slide-in effect
-        document.addEventListener("DOMContentLoaded", function() {
-            var sections = document.querySelectorAll(".fade-in");
-            sections.forEach(function(section) {
-                section.classList.add("active");
+        // Smooth scroll effect for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
-        // Increment counter function
-        var counter = 0;
-        function incrementCounter() {
-            counter++;
-            document.getElementById("counter").innerText = counter;
-        }
-
-        // Change color function
-        function changeColor() {
-            var randomColor = '#' + Math.floor(Math
+        // Fade-in effect for sections as they come into view
+        window.addEventListener('scroll', function() {
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight * 0.75) {
+                    section.style.opacity = 1;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
