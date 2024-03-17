@@ -3,48 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanelios Bot Documentation</title>
+    <title>Documentation and Bot Authorization</title>
     <style>
-        /* Global Styles */
+        /* CSS Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            background-color: #f3f3f3;
         }
 
         header {
-            background-color: #7289da;
-            color: #fff;
+            background-color: #ffd700;
+            color: #333;
             padding: 20px;
             text-align: center;
         }
 
-        main {
-            padding: 20px;
-        }
-
-        section {
-            margin-bottom: 40px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        footer {
-            background-color: #7289da;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Navigation Styles */
         nav ul {
             list-style-type: none;
             padding: 0;
-            text-align: center;
         }
 
         nav ul li {
@@ -53,111 +31,113 @@
         }
 
         nav ul li a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
             transition: color 0.3s ease;
-            position: relative;
         }
 
-        nav ul li a:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #fff;
-            visibility: hidden;
-            transform: scaleX(0);
-            transition: all 0.3s ease-in-out 0s;
+        nav ul li a:hover {
+            color: #000;
         }
 
-        nav ul li a:hover:before {
-            visibility: visible;
-            transform: scaleX(1);
+        main {
+            padding: 20px;
         }
 
-        /* Section Styles */
+        section {
+            margin-bottom: 40px;
+        }
+
         h1, h2 {
-            color: #7289da;
-        }
-
-        p {
             color: #333;
         }
 
-        /* Responsive Styles */
-        @media only screen and (max-width: 600px) {
-            header {
-                padding: 10px;
-            }
+        p {
+            color: #666;
+        }
 
-            main {
-                padding: 10px;
-            }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #ffd700;
+            color: #333;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ffc107;
+        }
+
+        /* JavaScript Effects */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .slide-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Sanelios Bot Documentation</h1>
-        <!-- Navigation Menu -->
+        <h1>Welcome to the Documentation and Bot Authorization Website</h1>
         <nav>
             <ul>
-                <li><a href="#command1">Command 1</a></li>
-                <li><a href="#command2">Command 2</a></li>
-                <!-- Add more links for other commands -->
+                <li><a href="#documentation">Documentation</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <main>
-        <section id="command1">
-            <h2>Command 1</h2>
-            <p>Description of Command 1.</p>
-            <h3>Usage:</h3>
-            <pre><code>!command1 [arguments]</code></pre>
-            <h3>Example:</h3>
-            <pre><code>!command1 argument1 argument2</code></pre>
+        <section id="documentation" class="slide-in-left">
+            <h2>Documentation</h2>
+            <p class="bot-description fade-in">Sanelios Bot is a versatile Discord bot with features like a working stock market, role shop, moderation commands, and basic economy.</p>
+            <h3>Example Command</h3>
+            <div class="command">
+                <p><strong>Command:</strong> !stock</p>
+                <p><strong>Description:</strong> Retrieves information about a specific stock.</p>
+                <p><strong>Usage:</strong> !stock [symbol]</p>
+                <p><strong>Example:</strong> !stock AAPL</p>
+            </div>
         </section>
-        
-        <section id="command2">
-            <h2>Command 2</h2>
-            <p>Description of Command 2.</p>
-            <h3>Usage:</h3>
-            <pre><code>!command2 [arguments]</code></pre>
-            <h3>Example:</h3>
-            <pre><code>!command2 argument1 argument2</code></pre>
-        </section>
-        
-        <!-- Add more sections for other commands -->
     </main>
-    
+
     <footer>
-        <p>&copy; 2024 Sanelios. All rights reserved.</p>
+        <p>&copy; 2024 Documentation and Bot Authorization Website. All rights reserved.</p>
     </footer>
 
+    <div class="container">
+        <a href="https://discord.com/oauth2/authorize?client_id=1190686283295633530&scope=bot%20applications.commands&permissions=2146958847" class="button fade-in">Authorize Sanelios Bot</a>
+    </div>
+
     <script>
-        // Smooth scroll effect for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Fade-in effect for sections as they come into view
-        window.addEventListener('scroll', function() {
-            document.querySelectorAll('section').forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (sectionTop < windowHeight * 0.75) {
-                    section.style.opacity = 1;
-                }
-            });
+        // JavaScript code for slide-in effect
+        document.addEventListener("DOMContentLoaded", function() {
+            var documentationSection = document.getElementById("documentation");
+            documentationSection.classList.add("active");
         });
     </script>
 </body>
