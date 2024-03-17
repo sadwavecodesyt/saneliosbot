@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanelios Bot Documentation</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #7289da;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        footer {
+            background-color: #7289da;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Navigation Styles */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out 0s;
+        }
+
+        nav ul li a:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        /* Section Styles */
+        h1, h2 {
+            color: #7289da;
+        }
+
+        p {
+            color: #333;
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            header {
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sanelios Bot Documentation</h1>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="#command1">Command 1</a></li>
+                <li><a href="#command2">Command 2</a></li>
+                <!-- Add more links for other commands -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="command1">
+            <h2>Command 1</h2>
+            <p>Description of Command 1.</p>
+            <h3>Usage:</h3>
+            <pre><code>!command1 [arguments]</code></pre>
+            <h3>Example:</h3>
+            <pre><code>!command1 argument1 argument2</code></pre>
+        </section>
+        
+        <section id="command2">
+            <h2>Command 2</h2>
+            <p>Description of Command 2.</p>
+            <h3>Usage:</h3>
+            <pre><code>!command2 [arguments]</code></pre>
+            <h3>Example:</h3>
+            <pre><code>!command2 argument1 argument2</code></pre>
+        </section>
+        
+        <!-- Add more sections for other commands -->
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Sanelios. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll effect for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in effect for sections as they come into view
+        window.addEventListener('scroll', function() {
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight * 0.75) {
+                    section.style.opacity = 1;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
