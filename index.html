@@ -101,6 +101,23 @@
             font-weight: 400; /* Regular font weight */
         }
 
+        /* Button Styles */
+        .discord-button {
+            background-color: #7289DA;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .discord-button:hover {
+            background-color: #6272a4;
+        }
+
         /* Responsive Styles */
         @media only screen and (max-width: 600px) {
             header {
@@ -117,6 +134,8 @@
 <body>
     <header>
         <h1>Sanelios Bot Documentation</h1>
+        <!-- Discord Bot Authorization Button -->
+        <a href="https://discord.com/oauth2/authorize?client_id=1190686283295633530&scope=bot%20applications.commands&permissions=2146958847" class="discord-button">Add Sanelios Bot to Your Server</a>
         <!-- Navigation Menu -->
         <nav>
             <ul>
